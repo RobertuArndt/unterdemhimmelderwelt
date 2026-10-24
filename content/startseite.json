@@ -1,16 +1,4 @@
 {
-  "hero_kicker": "Geschichten von unterwegs",
-  "hero_titel": "Die Welt beginnt hinter dem Horizont.",
-  "hero_text": "Von staubigen Pisten, stillen Nächten unter Sternen und den Menschen, denen wir unterwegs begegnen.",
-  "hero_bild": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2000&q=85",
-  "philosophie_kicker": "Warum wir unterwegs sind",
-  "philosophie_titel": "Nicht um Länder abzuhaken. Sondern um ihnen zu begegnen.",
-  "philosophie_text": "Wir lieben die Wege abseits der großen Straßen. Den ersten Kaffee am Morgen, das Gespräch mit Fremden, die zu Freunden werden, und die Freiheit, einfach noch eine Nacht zu bleiben. Dieses Journal erzählt von unseren Reisen – und davon, was unterwegs wirklich zählt.",
-  "auto_kicker": "Unser Begleiter",
-  "auto_titel": "Ein alter Land Cruiser. Und viele offene Wege.",
-  "auto_text": "Unser Toyota Land Cruiser HZJ78 ist für uns kein Ausstellungsstück. Er ist Zuhause auf Zeit, treuer Begleiter und manchmal auch eine Herausforderung. Hier erzählen wir von seiner Technik, unseren Umbauten und dem Leben unterwegs.",
-  "auto_bild": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85",
-  "journal_kicker": "Das Journal wächst",
-  "journal_titel": "Jede Reise hat ihre Geschichten.",
-  "journal_text": "Die ersten ausführlichen Reiseberichte und unsere eigenen Fotografien ergänzen wir hier Schritt für Schritt. Bis dahin ist dies ein erster Einblick in unsere Welt."
+  "titel": "Die Welt beginnt hinter dem Horizont.",
+  "untertitel": "Von staubigen Pisten, stillen Nächten unter Sternen und den Menschen, denen wir unterwegs begegnen."
 }
