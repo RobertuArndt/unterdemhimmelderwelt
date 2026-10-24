@@ -17,4 +17,51 @@
 <section class="journal" id="journal"><div class="kicker">Das Journal wächst</div><h2 style="font-size:clamp(35px,4vw,55px);font-weight:normal">Jede Reise hat ihre Geschichten.</h2><p>Die ersten ausführlichen Reiseberichte und unsere eigenen Fotografien ergänzen wir hier Schritt für Schritt. Bis dahin ist dies ein erster Einblick in unsere Welt.</p></section></main>
 <div class="notice">Entwurf: Die Landschaftsbilder sind vorläufige Beispielbilder und werden vor Veröffentlichung durch eigene Fotos ersetzt.</div>
 <footer class="footer"><strong>Unter dem Himmel der Welt</strong><p>Reisen. Begegnungen. Freiheit.</p><p>© 2026 Unter dem Himmel der Welt · <a href="mailto:kontakt@unterdemhimmelderwelt.de">Kontakt (E-Mail-Adresse erst nach Einrichtung nutzbar)</a></p><p>Vor öffentlicher Veröffentlichung ergänzen wir Impressum und Datenschutzhinweise.</p></footer>
+<script>
+// Inhalte werden aus den JSON-Dateien geladen und über Pages CMS bearbeitet.
+async function ladeInhalte() {
+  try {
+    const [seiteAntwort, reisenAntwort] = await Promise.all([
+      fetch('content/startseite.json'), fetch('content/reisen.json')
+    ]);
+    if (!seiteAntwort.ok || !reisenAntwort.ok) throw new Error('Inhalte nicht erreichbar');
+    const seite = await seiteAntwort.json();
+    const reisen = await reisenAntwort.json();
+    const text = (selector, value) => {
+      const element = document.querySelector(selector);
+      if (element && typeof value === 'string') element.textContent = value;
+    };
+    text('.hero .eyebrow', seite.hero_kicker);
+    text('.hero h1', seite.hero_titel);
+    text('.hero p', seite.hero_text);
+    text('.intro .kicker', seite.philosophie_kicker);
+    text('.intro h2', seite.philosophie_titel);
+    text('.intro p', seite.philosophie_text);
+    text('.about .kicker', seite.auto_kicker);
+    text('.about h2', seite.auto_titel);
+    text('.about p', seite.auto_text);
+    text('.journal .kicker', seite.journal_kicker);
+    text('.journal h2', seite.journal_titel);
+    text('.journal p', seite.journal_text);
+    if (seite.hero_bild) document.querySelector('.hero').style.backgroundImage = `linear-gradient(90deg,rgba(20,28,24,.74),rgba(20,28,24,.08)),linear-gradient(0deg,rgba(20,28,24,.40),transparent 45%),url("${encodeURI(seite.hero_bild).replace(/"/g,'%22')}")`;
+    if (seite.auto_bild) document.querySelector('.about .photo').style.backgroundImage = `url("${encodeURI(seite.auto_bild).replace(/"/g,'%22')}")`;
+    const cards = document.querySelector('.journeys .cards');
+    if (cards && Array.isArray(reisen.reisen)) {
+      cards.replaceChildren();
+      for (const reise of reisen.reisen) {
+        const article = document.createElement('article'); article.className='card';
+        const img = document.createElement('img'); img.src=reise.bild || 'logo.png'; img.alt=reise.titel || 'Reisebild';
+        const content=document.createElement('div'); content.className='content';
+        const meta=document.createElement('div'); meta.className='meta'; meta.textContent=reise.region || '';
+        const h3=document.createElement('h3'); h3.textContent=reise.titel || '';
+        const p=document.createElement('p'); p.textContent=reise.beschreibung || '';
+        content.append(meta,h3,p);
+        if(reise.link){ const a=document.createElement('a');a.className='read';a.href=reise.link;a.textContent='Mehr erfahren →';content.append(a); }
+        article.append(img,content);cards.append(article);
+      }
+    }
+  } catch (fehler) { console.warn('Die statischen Inhalte bleiben sichtbar:', fehler); }
+}
+ladeInhalte();
+</script>
 </body></html>
