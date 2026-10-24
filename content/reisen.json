@@ -1,0 +1,25 @@
+{
+  "reisen": [
+    {
+      "region": "Nordafrika · 2026",
+      "titel": "Tunesien",
+      "beschreibung": "Zwischen Dünen, Oasen und dem weiten Himmel der Sahara.",
+      "bild": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=900&q=85",
+      "link": "#journal"
+    },
+    {
+      "region": "Südosteuropa · 2026",
+      "titel": "Der Balkan",
+      "beschreibung": "Alte Wege, wilde Berge und Begegnungen, die bleiben.",
+      "bild": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85",
+      "link": "#journal"
+    },
+    {
+      "region": "Kaukasus",
+      "titel": "Georgien",
+      "beschreibung": "Hohe Gipfel, Gastfreundschaft und das Gefühl von Ferne.",
+      "bild": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",
+      "link": "#journal"
+    }
+  ]
+}
