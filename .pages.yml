@@ -1,0 +1,38 @@
+piere diesen gesamten Text hinein:
+
+media:
+  input: media
+  output: /media
+
+content:
+  - name: startseite
+    label: Startseite
+    type: file
+    path: content/startseite.json
+    fields:
+      - name: titel
+        label: Titel
+        type: string
+      - name: untertitel
+        label: Untertitel
+        type: text
+
+  - name: reisen
+    label: Unsere Reisen
+    type: file
+    path: content/reisen.json
+    fields:
+      - name: reisen
+        label: Reiseziele
+        type: object
+        list: true
+        fields:
+          - name: titel
+            label: Reiseziel
+            type: string
+          - name: beschreibung
+            label: Beschreibung
+            type: text
+          - name: bild
+            label: Bild
+            type: image
